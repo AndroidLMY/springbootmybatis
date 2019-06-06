@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+    datasource:
+        name: student
+        url: jdbc:mysql://127.0.0.1:3306/student?serverTimezone=CTT&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+        username: root
+        password: root
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  mapper-locations: classpath:mapper/*mapper.xml
+  type-aliases-package: com.example.springbootmybatis.entity
+

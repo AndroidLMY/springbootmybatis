@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springbootmybatis.dao.StudentDao">
+    <!--这里需要om.example.springbootmybatis.dao.StudentDao指定相应的Dao文件-->
+    <resultMap id="studentMap" type="com.example.springbootmybatis.entity.Student">
+        <!--这里返回的数据指定对应的实体类-->
+        <!--这里id需要和查询的resultMap对应-->
+        <result property="name" column="name"/>
+        <result property="phone" column="phone"/>
+        <result property="id" column="id"/>
+        <!--property实体类的字段名，column数据库中的字段名-->
+    </resultMap>
+    <select id="selectStudents" resultMap="studentMap">
+        SELECT * FROM student
+    </select>
+</mapper>
+
